@@ -1,9 +1,10 @@
 package com.example.listapplication.presenter
 
 import com.example.listapplication.model.data.Item
+import com.example.listapplication.model.data.ItemHolder
 import com.example.listapplication.model.main.ListModel
-import com.example.listapplication.model.task.OnItemListLoadCallback
 import com.example.listapplication.view.ListContractView
+import kotlinx.coroutines.*
 
 class ListPresenter {
     private var view: ListContractView? = null
@@ -22,12 +23,13 @@ class ListPresenter {
         loadList()
     }
 
-    private fun loadList(){
-        listModel.loadItemList(object : OnItemListLoadCallback{
-            override fun onLoadComplete(result: List<Item>) {
-                view?.showList(result)
-            }
-        })
+    private fun loadList() = GlobalScope.launch {
+        //imitate query to database
+        delay(3000)
+        val items = ItemHolder.items
+        runBlocking (Dispatchers.Main){
+            view?.showList(items)
+        }
     }
 
     fun onItemListSelected(item: Item){

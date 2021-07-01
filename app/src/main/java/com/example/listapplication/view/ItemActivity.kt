@@ -1,7 +1,7 @@
 package com.example.listapplication.view
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import com.example.listapplication.model.data.Item
@@ -27,11 +27,15 @@ class ItemActivity : AppCompatActivity(), ItemContractView  {
     }
 
     override fun showItem(item: Item) {
-        TODO("Not yet implemented")
+        binding.itemId.text = item.id.toString()
+        binding.itemName.text = item.name
+        binding.itemDescription.text = item.description
     }
 
     override fun backToStartActivity() {
-        TODO("Not yet implemented")
+        val intent = Intent(this, ListActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 
     override fun onDestroy() {

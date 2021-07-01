@@ -1,7 +1,7 @@
 package com.example.listapplication.model.main
 
-import com.example.listapplication.model.task.OnItemListLoadCallback
+import com.example.listapplication.model.data.Item
 
 interface ListContractModel {
-    fun loadItemList(callback: OnItemListLoadCallback)
+    fun getItemList() : List<Item>?
 }

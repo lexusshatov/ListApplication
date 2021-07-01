@@ -5,7 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.IBinder
-import android.support.v4.app.NotificationCompat
+import androidx.core.app.NotificationCompat
 import com.example.listapplication.R
 
 const val ONGOING_NOTIFICATION_ID = 100
@@ -28,7 +28,7 @@ class MyService : Service() {
         val notification: Notification = NotificationCompat.Builder(this, CHANNEL_ID)
             .setContentTitle(this.getString(R.string.app_name))
             .setContentText("Text")
-            .setSmallIcon(android.R.drawable.btn_default)
+            .setSmallIcon(android.R.drawable.stat_notify_chat)
             .setContentIntent(pendingIntent)
             .build()
 

@@ -3,7 +3,7 @@ package com.example.listapplication.view
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.widget.ArrayAdapter
 import com.example.listapplication.R
 import com.example.listapplication.databinding.ActivityListBinding
