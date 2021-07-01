@@ -1,4 +1,4 @@
-package com.example.listapplication.old
+package com.example.listapplication.view
 
 import android.app.*
 import android.content.Context

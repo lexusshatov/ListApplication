@@ -12,6 +12,8 @@ class ItemListViewModel(private val itemRepository: ItemRepository): ViewModel()
     val loadingState: LiveData<LoadingState>
         get() = _loadingState
 
+    val data = itemRepository.data
+
     init {
         fetchData()
     }

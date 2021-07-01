@@ -6,6 +6,7 @@ import com.example.listapplication.model.database.AppDatabase
 import com.example.listapplication.model.database.repository.ItemDao
 import com.example.listapplication.model.database.repository.ItemRepository
 import com.example.listapplication.viewmodel.ItemListViewModel
+import org.koin.android.ext.koin.androidApplication
 
 import org.koin.dsl.module
 
@@ -27,7 +28,7 @@ val databaseModule = module {
         return database.itemDao
     }
 
-    //single { provideDatabase(androidApplication()) }
+    single { provideDatabase(androidApplication()) }
     single { provideDao(get()) }
 }
 

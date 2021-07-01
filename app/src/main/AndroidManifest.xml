@@ -7,7 +7,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
-        android:name=""
+        android:name=".app.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ListApplication">
         <receiver
-            android:name=".old.MyReceiver"
+            android:name=".view.MyReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
@@ -24,12 +24,12 @@
         </receiver>
 
         <service
-            android:name=".old.MyService"
+            android:name=".view.MyService"
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".old.ItemActivity" />
-        <activity android:name=".old.MainActivity">
+        <activity android:name=".view.ItemActivity" />
+        <activity android:name=".view.ListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

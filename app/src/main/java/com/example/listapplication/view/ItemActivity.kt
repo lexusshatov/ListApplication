@@ -1,4 +1,4 @@
-package com.example.listapplication.old
+package com.example.listapplication.view
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import com.example.listapplication.databinding.ActivityItemBinding
 import com.example.listapplication.model.database.Item
+import com.example.listapplication.model.database.repository.ItemHolder
 import java.io.Serializable
 
 class ItemActivity : AppCompatActivity(), Serializable  {
@@ -20,12 +21,12 @@ class ItemActivity : AppCompatActivity(), Serializable  {
         val itemId = intent.extras?.get(EXTRA_NAME_ITEM) as? Int
         Log.d("ItemActivity", "item from intent: $itemId")
         if (itemId != null){
-            val item = Item(itemId)
+            val item = ItemHolder.getItemById(itemId)
             binding.itemId.text = item.id.toString()
             binding.itemName.text = item.name
             binding.itemDescription.text = item.description
         } else {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, ListActivity::class.java)
             startActivity(intent)
             finish()
         }

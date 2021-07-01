@@ -5,14 +5,15 @@ import com.example.listapplication.model.database.Item
 object ItemHolder {
 
     val items: List<Item> by lazy {
-        Thread.sleep(3000)
         val itemsArrayList = ArrayList<Item>(20)
         for (i in 0..19){
-            itemsArrayList.add(Item(i))
+            itemsArrayList.add(Item(i, "$i item", "description of $i item"))
         }
         itemsArrayList
     }
 
+    fun getItemById(id: Int): Item {
+        return items.first { it.id == id }
+    }
 }
-
 
