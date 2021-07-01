@@ -3,4 +3,7 @@
     <string name="channel_name">foreground_service</string>
     <string name="APP_PREFERENCES">preferences</string>
     <string name="APP_PREFERENCES_ITEM_ID">preferences_item_id</string>
+    <string name="item_value_id">ID</string>
+    <string name="item_value_name">Name</string>
+    <string name="item_value_description">Description</string>
 </resources>

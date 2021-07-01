@@ -1,10 +1,10 @@
-package com.example.listapplication.activity
+package com.example.listapplication.view
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import com.example.listapplication.data.Item
+import com.example.listapplication.model.data.Item
 import com.example.listapplication.databinding.ActivityItemBinding
 import java.io.Serializable
 
@@ -25,7 +25,7 @@ class ItemActivity : AppCompatActivity(), Serializable  {
             binding.itemName.text = item.name
             binding.itemDescription.text = item.description
         } else {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, ListActivity::class.java)
             startActivity(intent)
             finish()
         }

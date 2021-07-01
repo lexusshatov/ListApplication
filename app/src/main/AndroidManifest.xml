@@ -3,10 +3,9 @@
     package="com.example.listapplication">
 
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
+        android:fullBackupContent="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -14,21 +13,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ListApplication">
         <receiver
-            android:name=".service.MyReceiver"
-            android:enabled="true"
-            android:exported="true">
+            android:name="com.example.listapplication.presenter.background.MyReceiver"
+            android:enabled="true">
             <intent-filter>
                 <action android:name="com.example.listapplication.ITEM" />
             </intent-filter>
         </receiver>
 
         <service
-            android:name=".service.MyService"
-            android:enabled="true"
-            android:exported="true" />
+            android:name="com.example.listapplication.presenter.background.MyService"
+            android:enabled="true" />
 
-        <activity android:name=".activity.ItemActivity" />
-        <activity android:name=".activity.MainActivity">
+        <activity android:name=".view.ItemActivity" />
+        <activity android:name=".view.ListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
