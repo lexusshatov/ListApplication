@@ -1,22 +1,20 @@
-package com.example.listapplication.activity
+package com.example.listapplication.old
 
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.widget.ArrayAdapter
 import com.example.listapplication.R
-import com.example.listapplication.data.ItemHolder
+import com.example.listapplication.model.database.repository.ItemHolder
 import com.example.listapplication.databinding.ActivityMainBinding
-import com.example.listapplication.service.MyService
-import java.io.File
-import java.io.FileWriter
 import java.io.Serializable
 
 const val EXTRA_NAME_ITEM = "com.example.listapplication.LIST_ITEM"
 
 class MainActivity : AppCompatActivity(), Serializable {
     private lateinit var binding: ActivityMainBinding
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

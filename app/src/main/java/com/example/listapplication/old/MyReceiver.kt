@@ -1,18 +1,10 @@
-package com.example.listapplication.service
+package com.example.listapplication.old
 
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.util.Log
-import android.widget.Toast
 import com.example.listapplication.R
-import com.example.listapplication.activity.EXTRA_NAME_ITEM
-import com.example.listapplication.activity.ItemActivity
-import com.example.listapplication.data.Item
-import java.io.File
-import java.io.FileReader
-import java.io.FileWriter
-import java.lang.NumberFormatException
 
 class MyReceiver : BroadcastReceiver() {
 

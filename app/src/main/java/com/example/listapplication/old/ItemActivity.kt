@@ -1,11 +1,11 @@
-package com.example.listapplication.activity
+package com.example.listapplication.old
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import com.example.listapplication.data.Item
 import com.example.listapplication.databinding.ActivityItemBinding
+import com.example.listapplication.model.database.Item
 import java.io.Serializable
 
 class ItemActivity : AppCompatActivity(), Serializable  {
