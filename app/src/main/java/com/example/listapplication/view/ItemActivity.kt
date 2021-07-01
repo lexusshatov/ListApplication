@@ -6,10 +6,13 @@ import android.os.Bundle
 import android.util.Log
 import com.example.listapplication.model.data.Item
 import com.example.listapplication.databinding.ActivityItemBinding
+import com.example.listapplication.model.data.ItemHolder
+import com.example.listapplication.presenter.ItemPresenter
 import java.io.Serializable
 
-class ItemActivity : AppCompatActivity(), Serializable  {
+class ItemActivity : AppCompatActivity(), ItemContractView  {
     private lateinit var binding: ActivityItemBinding
+    private lateinit var presenter: ItemPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,17 +20,22 @@ class ItemActivity : AppCompatActivity(), Serializable  {
         val view = binding.root
         setContentView(view)
 
+        presenter = ItemPresenter()
+        presenter.attachView(this)
         val itemId = intent.extras?.get(EXTRA_NAME_ITEM) as? Int
-        Log.d("ItemActivity", "item from intent: $itemId")
-        if (itemId != null){
-            val item = Item(itemId)
-            binding.itemId.text = item.id.toString()
-            binding.itemName.text = item.name
-            binding.itemDescription.text = item.description
-        } else {
-            val intent = Intent(this, ListActivity::class.java)
-            startActivity(intent)
-            finish()
-        }
+        presenter.viewIsReady(itemId)
+    }
+
+    override fun showItem(item: Item) {
+        TODO("Not yet implemented")
+    }
+
+    override fun backToStartActivity() {
+        TODO("Not yet implemented")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        presenter.detachView()
     }
 }

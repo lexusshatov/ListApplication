@@ -5,7 +5,8 @@ import com.example.listapplication.model.main.ListModel
 import com.example.listapplication.model.task.OnItemListLoadCallback
 import com.example.listapplication.view.ListContractView
 
-class ListPresenter(var view: ListContractView?) {
+class ListPresenter {
+    private var view: ListContractView? = null
     private val listModel = ListModel()
 
     fun attachView(view: ListContractView){

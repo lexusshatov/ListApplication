@@ -24,7 +24,8 @@ class ListActivity : AppCompatActivity(), ListContractView {
         val view = binding.root
         setContentView(view)
 
-        presenter = ListPresenter(this)
+        presenter = ListPresenter()
+        presenter.attachView(this)
         adapter = ArrayAdapter(this,
             android.R.layout.simple_list_item_1,
             ArrayList<Item>())
