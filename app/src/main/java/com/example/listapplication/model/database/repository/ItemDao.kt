@@ -13,6 +13,6 @@ interface ItemDao {
     @Query("SELECT * FROM items")
     fun findAll(): LiveData<List<Item>>
 
-    @Insert(onConflict = OnConflictStrategy.ABORT)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun add(items: List<Item>)
 }
