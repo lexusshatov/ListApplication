@@ -19,7 +19,6 @@ class ItemRepository(private val itemDao: ItemDao, private val context: Context)
         withContext(Dispatchers.IO) {
             val items = ItemHolder.items
             itemDao.add(items)
-            Log.d("DATA", "data refreshed, item id: ${item!!.id}")
         }
     }
 
