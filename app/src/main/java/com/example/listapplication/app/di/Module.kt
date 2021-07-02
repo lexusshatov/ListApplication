@@ -1,17 +1,20 @@
 package com.example.listapplication.app.di
 
 import android.app.Application
+import android.content.Context
 import androidx.room.Room
 import com.example.listapplication.model.database.AppDatabase
 import com.example.listapplication.model.database.repository.ItemDao
 import com.example.listapplication.model.database.repository.ItemRepository
-import com.example.listapplication.viewmodel.ItemListViewModel
+import com.example.listapplication.viewmodel.ItemViewModel
+import com.example.listapplication.viewmodel.ListItemViewModel
 import org.koin.android.ext.koin.androidApplication
 
 import org.koin.dsl.module
 
 val viewModelModule = module {
-    single { ItemListViewModel(get()) }
+    single { ListItemViewModel(get()) }
+    single { ItemViewModel(get()) }
 }
 
 val databaseModule = module {
@@ -23,7 +26,6 @@ val databaseModule = module {
             .build()
     }
 
-
     fun provideDao(database: AppDatabase): ItemDao {
         return database.itemDao
     }
@@ -33,9 +35,9 @@ val databaseModule = module {
 }
 
 val repositoryModule = module {
-    fun provideUserRepository(dao: ItemDao): ItemRepository {
-        return ItemRepository(dao)
+    fun provideUserRepository(dao: ItemDao, context: Context): ItemRepository {
+        return ItemRepository(dao, context)
     }
 
-    single { provideUserRepository(get()) }
+    single { provideUserRepository(get(), get()) }
 }

@@ -12,8 +12,9 @@ object ItemHolder {
         itemsArrayList
     }
 
-    fun getItemById(id: Int): Item {
-        return items.first { it.id == id }
+    fun getItemById(id: Int): Item? {
+        items.forEach { if (it.id == id) return it }
+        return null
     }
 }
 

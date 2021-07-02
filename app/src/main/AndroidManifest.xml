@@ -3,8 +3,6 @@
     package="com.example.listapplication">
 
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:name=".app.App"
@@ -15,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ListApplication">
         <receiver
-            android:name=".view.MyReceiver"
+            android:name=".view.background.MyReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
@@ -24,7 +22,7 @@
         </receiver>
 
         <service
-            android:name=".view.MyService"
+            android:name=".view.background.MyService"
             android:enabled="true"
             android:exported="true" />
 
