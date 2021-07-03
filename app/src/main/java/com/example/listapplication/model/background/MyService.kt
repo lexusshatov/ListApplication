@@ -1,4 +1,4 @@
-package com.example.listapplication.service
+package com.example.listapplication.model.background
 
 import android.app.*
 import android.content.Context
@@ -7,7 +7,6 @@ import android.os.Build
 import android.os.IBinder
 import androidx.core.app.NotificationCompat
 import com.example.listapplication.R
-import com.example.listapplication.activity.ItemActivity
 
 const val ONGOING_NOTIFICATION_ID = 100
 const val CHANNEL_ID = "foreground_channel"

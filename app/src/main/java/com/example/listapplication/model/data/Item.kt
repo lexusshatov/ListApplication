@@ -1,4 +1,4 @@
-package com.example.listapplication.data
+package com.example.listapplication.model.data
 
 import java.io.Serializable
 

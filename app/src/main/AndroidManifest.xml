@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ListApplication">
         <receiver
-            android:name=".service.MyReceiver"
+            android:name="com.example.listapplication.model.background.MyReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
@@ -23,12 +23,12 @@
         </receiver>
 
         <service
-            android:name=".service.MyService"
+            android:name="com.example.listapplication.model.background.MyService"
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".activity.ItemActivity" />
-        <activity android:name=".activity.MainActivity">
+        <activity android:name=".view.ItemActivity" />
+        <activity android:name=".view.ListItemActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,4 +1,4 @@
-package com.example.listapplication.data
+package com.example.listapplication.model.data
 
 object ItemHolder {
 
@@ -8,6 +8,11 @@ object ItemHolder {
             itemsArrayList.add(Item(i))
         }
         itemsArrayList
+    }
+
+    fun getItemById(id: Int): Item? {
+        items.forEach { if (it.id == id) return it }
+        return null
     }
 
 }
