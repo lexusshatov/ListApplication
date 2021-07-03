@@ -7,19 +7,18 @@ import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.listapplication.R
-import com.example.listapplication.model.data.Item
-import com.example.listapplication.model.data.ItemHolder
 import com.example.listapplication.databinding.ActivityMainBinding
 import com.example.listapplication.model.ListItemView
 import com.example.listapplication.model.ListItemViewAction
 import com.example.listapplication.model.ListItemViewEvent
 import com.example.listapplication.model.ListItemViewState
 import com.example.listapplication.model.background.MyService
-import kotlinx.coroutines.*
-import java.lang.Exception
+import com.example.listapplication.model.data.Item
+import com.example.listapplication.model.data.ItemHolder
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 val TAG: String = ListItemActivity::class.java.name
 
