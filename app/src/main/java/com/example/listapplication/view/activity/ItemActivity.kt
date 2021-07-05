@@ -5,29 +5,32 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.ProgressBar
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import com.example.listapplication.databinding.ActivityItemBinding
 import com.example.listapplication.model.data.Item
 import com.example.listapplication.model.intent.state.ItemViewState
 import com.example.listapplication.model.intent.state.State
 import com.example.listapplication.view.StateView
 import com.example.listapplication.view.viewmodel.ItemViewModel
+import com.example.listapplication.view.viewmodel.ItemViewModelFactory
+import kotlin.properties.Delegates
 
 const val EXTRA_ITEM_ID: String = "extra_item_id"
 
 class ItemActivity : AppCompatActivity(), StateView {
     private lateinit var binding: ActivityItemBinding
-    private lateinit var viewModel: ItemViewModel
+    private var itemId by Delegates.notNull<Int>()
+    private val viewModel by viewModels<ItemViewModel> { ItemViewModelFactory(itemId) }
     private val TAG: String = this::class.java.simpleName
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        itemId = intent.getIntExtra(EXTRA_ITEM_ID, -1)
         binding = ActivityItemBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-
-        val itemId = intent.getIntExtra(EXTRA_ITEM_ID, -1)
-        viewModel = ItemViewModel(itemId)
 
         viewModel.state.observe(this, {
             Log.d(TAG, it.toString())

@@ -6,7 +6,9 @@ import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.ProgressBar
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModel
 import com.example.listapplication.databinding.ActivityMainBinding
 import com.example.listapplication.model.intent.state.ListItemViewState
 import com.example.listapplication.model.intent.SaveItemId
@@ -23,7 +25,7 @@ const val PREFERENCES_ITEM = "app_preferences_item_id"
 class ListItemActivity : AppCompatActivity(), StateView {
     private lateinit var binding: ActivityMainBinding
     private lateinit var adapter: ArrayAdapter<Item>
-    private val viewModel = ListItemViewModel()
+    private val viewModel by viewModels<ListItemViewModel>()
     private val saveItemId = SaveItemId(this)
     private val TAG: String = this::class.java.simpleName
 
