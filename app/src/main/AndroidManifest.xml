@@ -27,8 +27,8 @@
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".view.ItemActivity" />
-        <activity android:name=".view.ListItemActivity">
+        <activity android:name=".view.activity.ItemActivity" />
+        <activity android:name=".view.activity.ListItemActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
