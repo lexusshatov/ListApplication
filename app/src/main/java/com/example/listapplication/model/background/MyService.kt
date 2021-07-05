@@ -28,7 +28,7 @@ class MyService : Service() {
         val notification: Notification = NotificationCompat.Builder(this, CHANNEL_ID)
             .setContentTitle(this.getString(R.string.app_name))
             .setContentText("Text")
-            .setSmallIcon(android.R.drawable.btn_default)
+            .setSmallIcon(android.R.drawable.stat_notify_chat)
             .setContentIntent(pendingIntent)
             .build()
 

@@ -1,17 +1,21 @@
 package com.example.listapplication.model.data
 
+import androidx.lifecycle.MutableLiveData
+
 object ItemHolder {
 
-    val items: List<Item> by lazy {
+    val items: MutableLiveData<List<Item>> by lazy {
         val itemsArrayList = ArrayList<Item>(20)
         for (i in 0..19){
             itemsArrayList.add(Item(i))
         }
-        itemsArrayList
+        val itemsData = MutableLiveData<List<Item>>()
+        itemsData.postValue(itemsArrayList)
+        itemsData
     }
 
     fun getItemById(id: Int): Item? {
-        items.forEach { if (it.id == id) return it }
+        items.value?.forEach { if (it.id == id) return it }
         return null
     }
 

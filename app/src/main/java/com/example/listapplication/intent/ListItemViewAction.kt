@@ -1,4 +1,4 @@
-package com.example.listapplication.model
+package com.example.listapplication.intent
 
 import com.example.listapplication.model.data.Item
 
