@@ -34,7 +34,7 @@ class ItemDetailsActivity : BaseActivity<ItemDetailsViewModel, ActivityItemBindi
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        checkSavedItemOrListActivity()
+        checkSavedItemOrLeaveToListActivity()
         viewModel.state.observe(this, {
             renderState(it)
         })
@@ -50,7 +50,7 @@ class ItemDetailsActivity : BaseActivity<ItemDetailsViewModel, ActivityItemBindi
         }
     }
 
-    private fun checkSavedItemOrListActivity(){
+    private fun checkSavedItemOrLeaveToListActivity(){
         if (itemId == -1) {
             startActivity(Intent(this, ItemListActivity::class.java))
             finish()
