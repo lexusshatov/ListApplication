@@ -1,7 +1,9 @@
 package com.example.listapplication.view.ui.details
 
+import android.content.Intent
 import android.os.Bundle
 import com.example.listapplication.databinding.ActivityItemBinding
+import com.example.listapplication.view.ui.list.ItemListActivity
 import com.natife.example.mviexample.base.BaseActivity
 import com.natife.example.mviexample.data.interactors.details.GetItemByIdInteractor
 import com.natife.example.mviexample.data.model.Item
@@ -32,6 +34,7 @@ class ItemDetailsActivity : BaseActivity<ItemDetailsViewModel, ActivityItemBindi
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        checkSavedItemOrListActivity()
         viewModel.state.observe(this, {
             renderState(it)
         })
@@ -39,11 +42,18 @@ class ItemDetailsActivity : BaseActivity<ItemDetailsViewModel, ActivityItemBindi
     }
 
     private fun renderState(newState: ItemDetailsState) {
-        newState.item?.also { item ->
+        newState.item?.also {
             with(binding) {
-                itemId.text = "Item id: ${item.id}"
-                itemName.text = "Item name: ${item.name}"
+                itemId.text = "Item id: ${it.id}"
+                itemName.text = "Item name: ${it.name}"
             }
+        }
+    }
+
+    private fun checkSavedItemOrListActivity(){
+        if (itemId == -1) {
+            startActivity(Intent(this, ItemListActivity::class.java))
+            finish()
         }
     }
 }

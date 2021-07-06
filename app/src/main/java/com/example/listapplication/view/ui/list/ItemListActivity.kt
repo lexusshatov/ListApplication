@@ -12,7 +12,6 @@ import com.example.listapplication.view.ui.details.EXTRA_ITEM_ID
 import com.example.listapplication.view.ui.details.ItemDetailsActivity
 import com.natife.example.mviexample.base.BaseActivity
 import com.natife.example.mviexample.data.interactors.list.GetItemsInteractor
-import com.natife.example.mviexample.data.interactors.list.TestInteractor
 import com.natife.example.mviexample.data.model.Item
 import com.natife.example.mviexample.ui.list.ItemListState
 import com.natife.example.mviexample.ui.list.ItemListViewModel
@@ -29,7 +28,6 @@ class ItemListActivity : BaseActivity<ItemListViewModel, ActivityListBinding>() 
             ItemListViewModel(
                 interactors = setOf(
                     GetItemsInteractor(),
-                    TestInteractor()
                 )
             )
         }
@@ -57,9 +55,6 @@ class ItemListActivity : BaseActivity<ItemListViewModel, ActivityListBinding>() 
             renderState(it)
         })
         viewModel.loadItems()
-        binding.buttonTest.setOnClickListener {
-            viewModel.test()
-        }
     }
 
     private fun renderState(newState: ItemListState){
