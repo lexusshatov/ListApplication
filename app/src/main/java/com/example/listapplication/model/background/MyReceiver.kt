@@ -4,10 +4,10 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.util.Log
-import com.example.listapplication.view.activity.EXTRA_ITEM_ID
-import com.example.listapplication.view.activity.ItemActivity
-import com.example.listapplication.view.activity.PREFERENCES_ITEM
-import com.example.listapplication.view.activity.PREFERENCES_NAME
+import com.example.listapplication.view.ui.details.EXTRA_ITEM_ID
+import com.example.listapplication.view.ui.details.ItemDetailsActivity
+import com.example.listapplication.view.ui.list.PREFERENCES_ITEM
+import com.example.listapplication.view.ui.list.PREFERENCES_NAME
 
 class MyReceiver : BroadcastReceiver() {
 
@@ -17,7 +17,7 @@ class MyReceiver : BroadcastReceiver() {
             .getInt(PREFERENCES_ITEM, -1)
         Log.d("Receiver", "Item value $itemId")
 
-        val intentStartItemActivity = Intent(context, ItemActivity::class.java)
+        val intentStartItemActivity = Intent(context, ItemDetailsActivity::class.java)
         intentStartItemActivity.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         intentStartItemActivity.putExtra(EXTRA_ITEM_ID, itemId)
         context.startActivity(intentStartItemActivity)
