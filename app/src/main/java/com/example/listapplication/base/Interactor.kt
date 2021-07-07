@@ -1,4 +1,4 @@
-package com.natife.example.mviexample.base
+package com.example.listapplication.base
 
 interface Interactor<State, Action> {
 

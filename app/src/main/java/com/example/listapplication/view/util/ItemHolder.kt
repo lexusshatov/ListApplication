@@ -1,6 +1,6 @@
-package com.natife.example.mviexample.util
+package com.example.listapplication.view.util
 
-import com.natife.example.mviexample.data.model.Item
+import com.example.listapplication.model.data.Item
 
 object ItemHolder {
 

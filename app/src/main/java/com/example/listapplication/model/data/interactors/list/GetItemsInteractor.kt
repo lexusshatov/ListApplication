@@ -1,9 +1,9 @@
-package com.natife.example.mviexample.data.interactors.list
+package com.example.listapplication.model.data.interactors.list
 
-import com.natife.example.mviexample.base.Interactor
-import com.natife.example.mviexample.ui.list.ItemListAction
-import com.natife.example.mviexample.ui.list.ItemListState
-import com.natife.example.mviexample.util.ItemHolder
+import com.example.listapplication.base.Interactor
+import com.example.listapplication.view.ui.list.ItemListAction
+import com.example.listapplication.view.ui.list.ItemListState
+import com.example.listapplication.view.util.ItemHolder
 
 class GetItemsInteractor : Interactor<ItemListState, ItemListAction> {
 

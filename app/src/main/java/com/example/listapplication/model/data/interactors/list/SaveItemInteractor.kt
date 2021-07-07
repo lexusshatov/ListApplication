@@ -1,11 +1,11 @@
 package com.example.listapplication.model.data.interactors.list
 
 import android.content.Context
+import com.example.listapplication.base.Interactor
+import com.example.listapplication.view.ui.list.ItemListAction
+import com.example.listapplication.view.ui.list.ItemListState
 import com.example.listapplication.view.ui.list.PREFERENCES_ITEM
 import com.example.listapplication.view.ui.list.PREFERENCES_NAME
-import com.natife.example.mviexample.base.Interactor
-import com.natife.example.mviexample.ui.list.ItemListAction
-import com.natife.example.mviexample.ui.list.ItemListState
 
 class SaveItemInteractor: Interactor<ItemListState, ItemListAction> {
 

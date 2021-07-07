@@ -1,7 +1,7 @@
-package com.natife.example.mviexample.util
+package com.example.listapplication.view.util
 
 import androidx.lifecycle.MutableLiveData
-import com.natife.example.mviexample.base.BaseViewModel
+import com.example.listapplication.base.BaseViewModel
 import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.KProperty
 

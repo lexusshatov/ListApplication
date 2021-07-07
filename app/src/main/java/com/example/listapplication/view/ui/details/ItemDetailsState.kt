@@ -1,6 +1,6 @@
-package com.natife.example.mviexample.ui.details
+package com.example.listapplication.view.ui.details
 
-import com.natife.example.mviexample.data.model.Item
+import com.example.listapplication.model.data.Item
 
 data class ItemDetailsState(
     val itemId: Int,

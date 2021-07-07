@@ -1,4 +1,4 @@
-package com.natife.example.mviexample.base
+package com.example.listapplication.base
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

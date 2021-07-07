@@ -1,12 +1,11 @@
-package com.natife.example.mviexample.base
+package com.example.listapplication.base
 
 import androidx.annotation.MainThread
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.natife.example.mviexample.util.LiveValueDelegate
-import com.natife.example.mviexample.util.delegate
+import com.example.listapplication.view.util.delegate
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext

@@ -1,6 +1,6 @@
-package com.natife.example.mviexample.ui.list
+package com.example.listapplication.view.ui.list
 
-import com.natife.example.mviexample.base.Reducer
+import com.example.listapplication.base.Reducer
 
 class ItemListReducer : Reducer<ItemListState, ItemListAction> {
 

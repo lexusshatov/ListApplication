@@ -1,22 +1,19 @@
 package com.example.listapplication.view.ui.list
 
-import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.listapplication.base.BaseActivity
 import com.example.listapplication.databinding.ActivityListBinding
 import com.example.listapplication.model.background.MyService
+import com.example.listapplication.model.data.Item
 import com.example.listapplication.model.data.interactors.list.SaveItemInteractor
 import com.example.listapplication.view.ui.details.EXTRA_ITEM_ID
 import com.example.listapplication.view.ui.details.ItemDetailsActivity
-import com.natife.example.mviexample.base.BaseActivity
-import com.natife.example.mviexample.data.interactors.list.GetItemsInteractor
-import com.natife.example.mviexample.data.model.Item
-import com.natife.example.mviexample.ui.list.ItemListState
-import com.natife.example.mviexample.ui.list.ItemListViewModel
-import com.natife.example.mviexample.util.createViewModel
+import com.example.listapplication.model.data.interactors.list.GetItemsInteractor
+import com.example.listapplication.view.util.createViewModel
 
 
 const val PREFERENCES_NAME = "app_preferences"

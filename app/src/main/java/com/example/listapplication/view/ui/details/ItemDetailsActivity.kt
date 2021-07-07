@@ -2,14 +2,11 @@ package com.example.listapplication.view.ui.details
 
 import android.content.Intent
 import android.os.Bundle
+import com.example.listapplication.base.BaseActivity
 import com.example.listapplication.databinding.ActivityItemBinding
+import com.example.listapplication.model.data.interactors.details.GetItemByIdInteractor
 import com.example.listapplication.view.ui.list.ItemListActivity
-import com.natife.example.mviexample.base.BaseActivity
-import com.natife.example.mviexample.data.interactors.details.GetItemByIdInteractor
-import com.natife.example.mviexample.data.model.Item
-import com.natife.example.mviexample.ui.details.ItemDetailsState
-import com.natife.example.mviexample.ui.details.ItemDetailsViewModel
-import com.natife.example.mviexample.util.createViewModel
+import com.example.listapplication.view.util.createViewModel
 
 const val EXTRA_ITEM_ID: String = "extra_item_id"
 

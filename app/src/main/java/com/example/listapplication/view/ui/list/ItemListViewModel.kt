@@ -1,9 +1,9 @@
-package com.natife.example.mviexample.ui.list
+package com.example.listapplication.view.ui.list
 
 import android.content.Context
-import com.natife.example.mviexample.base.BaseViewModel
-import com.natife.example.mviexample.base.Interactor
-import com.natife.example.mviexample.data.model.Item
+import com.example.listapplication.base.BaseViewModel
+import com.example.listapplication.base.Interactor
+import com.example.listapplication.model.data.Item
 
 class ItemListViewModel(
     interactors: Set<Interactor<ItemListState, ItemListAction>>

@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.listapplication.databinding.ListItemBinding
-import com.natife.example.mviexample.data.model.Item
+import com.example.listapplication.model.data.Item
 
 class ItemListAdapter(
     private val onItemClicked: (Item) -> Unit

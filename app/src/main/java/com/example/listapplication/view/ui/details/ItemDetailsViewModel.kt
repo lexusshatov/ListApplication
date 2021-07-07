@@ -1,7 +1,7 @@
-package com.natife.example.mviexample.ui.details
+package com.example.listapplication.view.ui.details
 
-import com.natife.example.mviexample.base.BaseViewModel
-import com.natife.example.mviexample.base.Interactor
+import com.example.listapplication.base.BaseViewModel
+import com.example.listapplication.base.Interactor
 
 class ItemDetailsViewModel(
     interactors: Set<Interactor<ItemDetailsState, ItemDetailsAction>>,

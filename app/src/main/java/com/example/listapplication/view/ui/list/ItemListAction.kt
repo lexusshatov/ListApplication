@@ -1,7 +1,7 @@
-package com.natife.example.mviexample.ui.list
+package com.example.listapplication.view.ui.list
 
 import android.content.Context
-import com.natife.example.mviexample.data.model.Item
+import com.example.listapplication.model.data.Item
 
 sealed class ItemListAction {
 
