@@ -17,6 +17,8 @@ class ItemListReducer : Reducer<ItemListState, ItemListAction> {
             )
             is ItemListAction.Error -> state
             is ItemListAction.Test -> state
+            is ItemListAction.SaveItem -> state
+            is ItemListAction.ItemSaved -> state
         }
     }
 }

@@ -8,6 +8,7 @@ import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.listapplication.databinding.ActivityListBinding
 import com.example.listapplication.model.background.MyService
+import com.example.listapplication.model.data.interactors.list.SaveItemInteractor
 import com.example.listapplication.view.ui.details.EXTRA_ITEM_ID
 import com.example.listapplication.view.ui.details.ItemDetailsActivity
 import com.natife.example.mviexample.base.BaseActivity
@@ -28,6 +29,7 @@ class ItemListActivity : BaseActivity<ItemListViewModel, ActivityListBinding>() 
             ItemListViewModel(
                 interactors = setOf(
                     GetItemsInteractor(),
+                    SaveItemInteractor()
                 )
             )
         }
@@ -62,17 +64,10 @@ class ItemListActivity : BaseActivity<ItemListViewModel, ActivityListBinding>() 
     }
 
     private fun navigateToDetails(item: Item) {
-        saveItem(item)
+        viewModel.saveItem(this, item)
         val intentStartActivity = Intent(this, ItemDetailsActivity::class.java)
         intentStartActivity.putExtra(EXTRA_ITEM_ID, item.id)
         startActivity(intentStartActivity)
-    }
-
-    private fun saveItem(item: Item){
-        getSharedPreferences(PREFERENCES_NAME, Context.MODE_PRIVATE)
-            .edit()
-            .putInt(PREFERENCES_ITEM, item.id)
-            .apply()
     }
 
 }
