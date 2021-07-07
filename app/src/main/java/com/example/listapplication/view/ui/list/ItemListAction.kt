@@ -1,6 +1,5 @@
 package com.example.listapplication.view.ui.list
 
-import android.content.Context
 import com.example.listapplication.model.data.Item
 
 sealed class ItemListAction {
@@ -9,7 +8,7 @@ sealed class ItemListAction {
     object LoadItems : ItemListAction()
     data class ItemsLoaded(val items: List<Item>) : ItemListAction()
     data class Error(val error: Exception) : ItemListAction()
-    data class SaveItem(val context: Context, val item: Item) : ItemListAction()
+    data class SaveItem(val item: Item) : ItemListAction()
     object ItemSaved: ItemListAction()
 
     //For test purposes

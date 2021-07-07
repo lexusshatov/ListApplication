@@ -1,5 +1,6 @@
 package com.example.listapplication.view.ui.list
 
+import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
@@ -26,7 +27,10 @@ class ItemListActivity : BaseActivity<ItemListViewModel, ActivityListBinding>() 
             ItemListViewModel(
                 interactors = setOf(
                     GetItemsInteractor(),
-                    SaveItemInteractor()
+                    SaveItemInteractor(preferences = getSharedPreferences(
+                        PREFERENCES_NAME,
+                        Context.MODE_PRIVATE)
+                    )
                 )
             )
         }
@@ -61,7 +65,7 @@ class ItemListActivity : BaseActivity<ItemListViewModel, ActivityListBinding>() 
     }
 
     private fun navigateToDetails(item: Item) {
-        viewModel.saveItem(this, item)
+        viewModel.saveItem(item)
         val intentStartActivity = Intent(this, ItemDetailsActivity::class.java)
         intentStartActivity.putExtra(EXTRA_ITEM_ID, item.id)
         startActivity(intentStartActivity)
